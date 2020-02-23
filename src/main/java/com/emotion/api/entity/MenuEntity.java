@@ -1,28 +1,24 @@
-package com.emotion.api.model;
+package com.emotion.api.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Data
 @Entity
-@Table(name = "user_role_rel")
-public class UserRoleRelEntity {
+@Table(name = "menu")
+public class MenuEntity {
     @Id
-    @GeneratedValue
-    @Column(name = "user_role_rel_id", nullable = false)
-    private long userRoleRelId;
-    @Column(name = "role_id", nullable = false)
-    private long roleId;
-    @Column(name = "user_id", nullable = false)
-    private long userId;
+    @Column(name = "menu_id", nullable = false)
+    private long menuId;
+    @Column(name = "menu_name", nullable = false)
+    private String menuName;
+    @Column(name = "menu_dtl_name", nullable = false)
+    private String menuDtlName;
+    @Column(name = "scope_name", nullable = false)
+    private String scopeName;
     @Column(name = "create_dt", insertable = false, updatable = false, nullable = false)
     private java.sql.Timestamp createDt;
     @Column(name = "create_user_id", updatable = false, nullable = false)
@@ -31,5 +27,5 @@ public class UserRoleRelEntity {
     private java.sql.Timestamp updateDt;
     @Column(name = "update_user_id", nullable = false)
     private long updateUserId;
-}
 
+}

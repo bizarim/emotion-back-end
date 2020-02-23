@@ -1,5 +1,6 @@
 spring:
-  port: 8080
+  liquibase:
+    contexts: default
   datasource:
     tomcat:
       validation-query: /* ping */ SELECT 1;
@@ -24,10 +25,7 @@ spring:
         order_updates: true
         enable_lazy_load_no_trans: true
     hibernate:
-      ddl-auto: create
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: html
+      ddl-auto: none
   data:
     rest:
       base-path: /v1

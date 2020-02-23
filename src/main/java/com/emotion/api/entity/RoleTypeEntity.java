@@ -1,4 +1,4 @@
-package com.emotion.api.model;
+package com.emotion.api.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "role_type")
 public class RoleTypeEntity {
     @Id
     @Column(name = "role_id", nullable = false)

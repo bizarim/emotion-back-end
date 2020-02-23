@@ -1,4 +1,4 @@
-package com.emotion.api.model;
+package com.emotion.api.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,12 +28,9 @@ public class UserEntity {
     @Column(name = "is_enabled", nullable = false)
     private boolean isEnabled = false;
     @Builder.Default
-    @Column(name = "email_verified", nullable = false)
-    private boolean emailVerified = false;
-    @Builder.Default
     @Column(name = "withdraw", nullable = false)
     private boolean withdraw = false;
-    @Column(name = "last_login_dt", nullable = false)
+    @Column(name = "last_login_dt", insertable = false, updatable = false, nullable = false)
     private java.sql.Timestamp lastLoginDt;
     @Column(name = "create_dt", insertable = false, updatable = false, nullable = false)
     private java.sql.Timestamp createDt;
